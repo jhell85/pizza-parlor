@@ -3,12 +3,17 @@
 function Order() {
   this.pizzas = [];
   this.currentId = 0;
+  this.price = 0
 }
 
 Order.prototype.addPizza = function(pizza) {
   pizza.price = getPrice(pizza)
   pizza.id = this.assignId()
   this.pizzas.push(pizza)
+  this.price += pizza.price
+}
+Order.prototype.addOrderTotal = function(pizza){
+  this.price += pizza.price
 }
 
 Order.prototype.assignId = function () {
@@ -65,7 +70,7 @@ $(document).ready(function(){
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
     var size = $(".pizza-size:checked").val()
-    var newPizza = new Pizza(size, toppings, "free")
+    var newPizza = new Pizza(size, toppings)
     order.addPizza(newPizza)
     console.log(order)
   })
