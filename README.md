@@ -1,20 +1,11 @@
 # _Pizza Parlor_
 
-#### _This site comes with the all basic parts to get you started making a single page website fast. | Jan 24. 2020_
-
 #### By _**Joshua Hellman**_
 
 
 ## Description
 
-_This boilerplate site has one index.html file that is already linked to the included bootstrap.css(4.4), styles.css, jQuery.js(3.4.1), and scripts.js._
-
-
-There is a pre-built two input form with a submit button. There is also a simple jQuery function that will console.log when the submit button is clicked.
-
-The .gitignore file is a template for mac osx but a link is provided to get a template for any operating system. 
-
-[create a .gitignore template for your os here](https://www.gitignore.io/)
+_This site will allow a user to place an order of a pizza. a pizza size can be ordered and toppings can be added to the pizza for an additional cost. after the pizza order has been finalized it will show a total cost for the pizza and the specifications of the ordered pizza_
 
 ## Setup/Installation Requirements
 
@@ -33,17 +24,17 @@ cd desktop
  cd ~/Desktop
  ```
 
- 3. in terminal type '_git clone {link to repository}_ '
+ 3. in terminal type '_git clone https://github.com/jhell85/pizza-parlor.git_ '
 
 ```sh
-git clone https://github.com/dustatron/boilerplate-simple-website.git
+git clone https://github.com/jhell85/pizza-parlor.git
 ```
 
 4. navigate to the new folder that was created on your desk
 5. select index.html
 6. right click on the file and select _'open with'_
-7. select your browser
-8. enjoy this project
+7. select your browser you choose to view this site in
+8. order a pizza (just don't expect one to show up)
 
 
 ## Specs
@@ -51,7 +42,7 @@ git clone https://github.com/dustatron/boilerplate-simple-website.git
 
 Behavoir | Input | Output
 :---------:|:------:|:------:
-The program takes in input and console.log a 'click' | 'any word' | 'click'
+the program takes in a pizza order size from a radio button selector |  | 'click'
 The program takes in any words and console logs the output | 'learning to code' | 'learning to code'
 
 ## Support 
