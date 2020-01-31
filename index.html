@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/styles.css">
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
 
   <title>Pizza Bros</title>
@@ -20,25 +20,26 @@
 <body>
   <div class="container">
     <!-- input form  -->
+    <h1 class="text-center">Pizza Bros Pizzeria</h1>
+  </div>
     <div class="row">
       <div class="col-md-6 offset-md-3 box-decore">
-        <h1 class="text-center">Pizza Bros Pizzeria</h1>
         <div>
           <form>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <input class="pizza-size form-check-input" type="radio" id="small" name="pizza-size" value="small">
               <label class="form-check-label" for="exampleRadios1">
                 Small 
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <input class="pizza-size form-check-input" type="radio" name="pizza-size"  id="medium" value="medium">
               <label class="form-check-label" for="exampleRadios2">
-                Medium 
+                Medium
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <input class="pizza-size form-check-input" type="radio" id="large" name="pizza-size" value="large">
               <label class="form-check-label" for="exampleRadios2">
                 Large 
               </label>
@@ -47,7 +48,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>>
 </body>
 
 </html>
