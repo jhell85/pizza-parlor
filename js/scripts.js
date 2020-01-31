@@ -1,13 +1,13 @@
 //---------Back end-----------
 
 function Order() {
-  this.Pizzas = [];
+  this.pizzas = [];
   this.currentId = 0;
 }
 
-Order.prototype.addPizza = function(Pizza) {
-  Pizza.id = this.assignId()
-  this.Pizzas.push()
+Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId()
+  this.pizzas.push(pizza)
 }
 
 Order.prototype.assignId = function () {
@@ -15,9 +15,9 @@ Order.prototype.assignId = function () {
   return this.currentId
 }
 
-function Pizza(pizzaSize, pizzaPrice) {
+function Pizza(pizzaSize,toppings,pizzaPrice) {
   this.size = pizzaSize;
-  this.toppings = [];
+  this.toppings = toppings;
   this.price = pizzaPrice;
 }
 
@@ -30,11 +30,10 @@ function removeVal(arr, val){
 }
 
 // -------UI-------
-var Order = new Order();
+var order = new Order();
 var toppings = [];
 
-function attachContactListeners() {
-  
+function attachContactListeners() { 
   $( ".pizza-size" ).on( "click", function(){
     $( "#pizza-image" ).html( $( ".pizza-size:checked" ).val() + " pizza selected" )
   });
@@ -57,7 +56,9 @@ $(document).ready(function(){
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
     var size = $(".pizza-size:checked").val()
-    console.log(size, toppings)
+    var newPizza = new Pizza(size, toppings, "free")
+    order.addPizza(newPizza)
+    console.log(order)
   })
 });
 
