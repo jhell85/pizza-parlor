@@ -2,13 +2,13 @@
 // -------UI-------
 var Order = new Order();
 
-$(".pizza-size").click(function(){
-  console.log("radio selected")
-})
 
 $(document).ready(function(){
 
+  $( ".pizza-size" ).on( "click", function() {
+    $( "#pizza-image" ).html( $( ".pizza-size:checked" ).val() + " pizza selected" )});
 
+  
 
 });
 
