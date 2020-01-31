@@ -31,23 +31,25 @@ function removeVal(arr, val){
 
 // -------UI-------
 var Order = new Order();
+var toppings = [];
 
-
-var toppings = new Array()
 function attachContactListeners() {
   
-  $( ".pizza-size" ).on( "click", function() {
-    $( "#pizza-image" ).html( $( ".pizza-size:checked" ).val() + " pizza selected" )});
-
-    $("input[name*='toppings']").click(function() {
-      if ($("input[name*='toppings']").attr('checked')){
-          toppings.push($(this).val());
-      }else{
-          removeVal(toppings, $(this).val());
-        }
-      console.log(toppings);
+  $( ".pizza-size" ).on( "click", function(){
+    $( "#pizza-image" ).html( $( ".pizza-size:checked" ).val() + " pizza selected" )
   });
+
   
+  $("input.toppings").on("change", function(){
+    var topping = $(this);
+    if (topping.is(":checked")) {
+      toppings.push(topping.val());
+    }
+    else{
+      toppings = toppings.filter(x => x != topping.val());
+    }
+    console.log(toppings);
+  });
 }
 
 $(document).ready(function(){
@@ -55,10 +57,7 @@ $(document).ready(function(){
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
     var size = $(".pizza-size:checked").val()
-    var toppings = $(".toppings:checked").val()
     console.log(size, toppings)
   })
-  
-
 });
 
