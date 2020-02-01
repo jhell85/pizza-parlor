@@ -2,82 +2,83 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
-
-
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
-
   <title>Pizza Bros</title>
 </head>
 
 <body>
   <div class="container">
-    <!-- input form  -->
     <h1 class="text-center">Pizza Bros Pizzeria</h1>
-    <div class="row">
-
-      <div class="col-md-4 box-decore">
-        <h3>What Size is your appetite?</h3>
-        <div>
-          <form id="form-pizza">
-            <div class="form-check">
-              <input class="pizza-size form-check-input" type="radio" id="small" name="pizza-size" value="small">
-              <label class="form-check-label" for="exampleRadios1">
-                Small
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="pizza-size form-check-input" type="radio" name="pizza-size" id="medium" value="medium">
-              <label class="form-check-label" for="exampleRadios2">
-                Medium
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="pizza-size form-check-input" type="radio" id="large" name="pizza-size" value="large">
-              <label class="form-check-label" for="exampleRadios2">
-                Large
-              </label>
-            </div>
-            <div>
-              <h4>Select some toppings</h4>
-              <div class="form-check">
-                <input class="form-check-input toppings" type="checkbox" name="toppings1" value="peperoni" id="peperoni">
-                <label class="form-check-label" for="defaultCheck1">
-                  peperoni 
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input toppings" type="checkbox" name="toppings2" value="sausage" id="sausage">
-                <label class="form-check-label" for="defaultCheck1">
-                  sausage
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input toppings" type="checkbox" name="toppings3" value="mushrooms" id="mushrooms">
-                <label class="form-check-label" for="defaultCheck1">
-                  mushrooms
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input toppings" type="checkbox" name="toppings4" value="pineapple" id="pineapple">
-                <label class="form-check-label" for="defaultCheck1">
-                  pineapple
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+    <form id="form-pizza">
+    <div class="container">
+      <div class="row">
+<!-- -----------pizza Size container-------- -->
+        <div class="col-md-4 box-decore">
+          <h4>What Size is your appetite?</h4>
+          <div class="form-check">
+            <input class="pizza-size form-check-input" type="radio" id="small" name="pizza-size" value="small">
+            <label class="form-check-label" for="exampleRadios1">
+              Small
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="pizza-size form-check-input" type="radio" name="pizza-size" id="medium" value="medium">
+            <label class="form-check-label" for="exampleRadios2">
+              Medium
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="pizza-size form-check-input" type="radio" id="large" name="pizza-size" value="large">
+            <label class="form-check-label" for="exampleRadios2">
+              Large
+            </label>
+          </div>
         </div>
-        <div id="pizza-image"></div>
+<!-- -----------------pizza toppings container ------------------ -->
+        <div class="col-md-4 box-decore">
+          <div>
+            <h4>Select some toppings</h4>
+            <div class="form-check">
+              <input class="form-check-input toppings" type="checkbox" name="toppings1" value="peperoni" id="peperoni">
+              <label class="form-check-label" for="defaultCheck1">
+                peperoni
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input toppings" type="checkbox" name="toppings2" value="sausage" id="sausage">
+              <label class="form-check-label" for="defaultCheck1">
+                sausage
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input toppings" type="checkbox" name="toppings3" value="mushrooms"
+                id="mushrooms">
+              <label class="form-check-label" for="defaultCheck1">
+                mushrooms
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input toppings" type="checkbox" name="toppings4" value="pineapple"
+                id="pineapple">
+              <label class="form-check-label" for="defaultCheck1">
+                pineapple
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
       </div>
     </div>
+  </form>
+    <div id="pizza-image"></div>
   </div>
+
 </body>
+
 </html>
