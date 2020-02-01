@@ -49,6 +49,23 @@ function getPrice(pizza){
 var order = new Order();
 var toppings = [];
 
+function displayPizzaToppings(toppings) {
+  var toppingsList = "";
+  toppings.forEach(topping => {
+    toppingsList += `<li>${topping}</li>`
+  })
+  return toppingsList
+}
+
+function displayOrderDetails(OrderToDisplay) {
+  var PizzaList = $("#pizza-table");
+  var htmlForPizzaDetails = "";
+  OrderToDisplay.pizzas.forEach(pizza => {
+    htmlForPizzaDetails += `<tr> <th scope="row">${pizza.id}</th> <td>${pizza.size}</td> <td><ul>${displayPizzaToppings(pizza.toppings)}</ul></td> <td>${pizza.price}</td>`
+  })
+  PizzaList.html(htmlForPizzaDetails)
+}
+
 function attachContactListeners() { 
   $( ".pizza-size" ).on( "click", function(){
     $( "#pizza-image" ).html( $( ".pizza-size:checked" ).val() + " pizza selected" )
@@ -64,15 +81,23 @@ function attachContactListeners() {
     }
   });
 }
+function uncheckInputs(){
+  $('input[type=checkbox]').each(function() { 
+          this.checked = false; 
+  }); 
+}
 
 $(document).ready(function(){
   attachContactListeners();
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
-    var size = $(".pizza-size:checked").val()
-    var newPizza = new Pizza(size, toppings)
-    order.addPizza(newPizza)
-    console.log(order)
+    var size = $(".pizza-size:checked").val();
+    var newPizza = new Pizza(size, toppings);
+    order.addPizza(newPizza);
+    displayOrderDetails(order);
+    uncheckInputs()
+    toppings = []
+    console.log(`Order: ${order} toppings: ${toppings}`);
   })
 });
 
