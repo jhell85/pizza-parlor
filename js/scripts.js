@@ -28,17 +28,17 @@ function Pizza(pizzaSize,toppings,pizzaPrice) {
 }
 function getPrice(pizza){
   price = 0
-  if(pizza.size === "small"){
+  if(pizza.size === "Small"){
     price += 10
-  }else if(pizza.size === "medium"){
+  }else if(pizza.size === "Medium"){
     price += 15
   }else{
     price += 18
   }
   pizza.toppings.forEach(topping => {
-    if (topping === "peperoni" || topping === "sausage"){
+    if (topping === "Pepperoni" || topping === "Sausage"){
       price += 2
-    }else if(topping === "pineapple" || topping === "mushrooms"){
+    }else if(topping === "Pineapple" || topping === "Mushrooms"){
       price += .75
     }
   });
@@ -52,7 +52,7 @@ var toppings = [];
 function displayPizzaToppings(toppings) {
   var toppingsList = "";
   toppings.forEach(topping => {
-    toppingsList += `<li>${topping}</li>`
+    toppingsList += `<span>${topping}</span><br>`
   })
   return toppingsList
 }
@@ -61,8 +61,9 @@ function displayOrderDetails(OrderToDisplay) {
   var PizzaList = $("#pizza-table");
   var htmlForPizzaDetails = "";
   OrderToDisplay.pizzas.forEach(pizza => {
-    htmlForPizzaDetails += `<tr> <th scope="row">${pizza.id}</th> <td>${pizza.size}</td> <td><ul>${displayPizzaToppings(pizza.toppings)}</ul></td> <td>${pizza.price}</td>`
+    htmlForPizzaDetails += `<tr class="table-secondary"> <td scope="row">Pizza</td> <td>${pizza.size}</td> <td>${displayPizzaToppings(pizza.toppings)}</ul></td> <td>${pizza.price}</td>`
   })
+  htmlForPizzaDetails += `<tr class="table-success"> <th scope="row"><form id="form-order"> <button>submit Order</button></form><th/> <th> Total:</th> <th>${OrderToDisplay.price}</th>`
   PizzaList.html(htmlForPizzaDetails)
 }
 
@@ -81,10 +82,13 @@ function attachContactListeners() {
     }
   });
 }
-function uncheckInputs(){
+function clearInputs(){
   $('input[type=checkbox]').each(function() { 
           this.checked = false; 
   }); 
+  $('input[type=radio]').each(function() { 
+    this.checked = false; 
+}); 
 }
 
 $(document).ready(function(){
@@ -95,8 +99,8 @@ $(document).ready(function(){
     var newPizza = new Pizza(size, toppings);
     order.addPizza(newPizza);
     displayOrderDetails(order);
-    uncheckInputs()
-    toppings = []
+    clearInputs();
+    toppings = [];
     console.log(`Order: ${order} toppings: ${toppings}`);
   })
 });

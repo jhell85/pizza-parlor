@@ -17,8 +17,8 @@
     <div id="order">
       <table class="table table-sm">
         <thead>
-          <tr>
-            <th scope="col">Pizza</th>
+          <tr class="table-primary">
+            <th scope="col">Type</th>
             <th scope="col">Size</th>
             <th scope="col">Toppings</th>
             <th scope="col">Price</th>
@@ -34,23 +34,23 @@
       <div class="row">
 <!-- -----------pizza Size container------------------------------ -->
         <div class="col-md-4 box-decore">
-          <h4>What Size is your appetite?</h4>
+          <h4>What size is your appetite?</h4>
           <div class="form-check">
-            <input class="pizza-size form-check-input" type="radio" id="small" name="pizza-size" value="small">
+            <input class="pizza-size form-check-input" type="radio" id="small" name="pizza-size" value="Small">
             <label class="form-check-label" for="exampleRadios1">
-              Small
+              Small......$10
             </label>
           </div>
           <div class="form-check">
-            <input class="pizza-size form-check-input" type="radio" name="pizza-size" id="medium" value="medium">
+            <input class="pizza-size form-check-input" type="radio" name="pizza-size" id="medium" value="Medium">
             <label class="form-check-label" for="exampleRadios2">
-              Medium
+              Medium..$15
             </label>
           </div>
           <div class="form-check">
-            <input class="pizza-size form-check-input" type="radio" id="large" name="pizza-size" value="large">
+            <input class="pizza-size form-check-input" type="radio" id="large" name="pizza-size" value="Large">
             <label class="form-check-label" for="exampleRadios2">
-              Large
+              Large......$18
             </label>
           </div>
         </div>
@@ -59,29 +59,36 @@
           <div>
             <h4>Select some toppings</h4>
             <div class="form-check">
-              <input class="form-check-input toppings" type="checkbox" name="toppings1" value="peperoni" id="peperoni">
+              <input class="form-check-input toppings" type="checkbox" name="toppings4" value="Cheese"
+                id="cheese">
               <label class="form-check-label" for="defaultCheck1">
-                peperoni
+                Cheese
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input toppings" type="checkbox" name="toppings2" value="sausage" id="sausage">
+              <input class="form-check-input toppings" type="checkbox" name="toppings1" value="Pepperoni" id="pepperoni">
               <label class="form-check-label" for="defaultCheck1">
-                sausage
+                Pepperoni (add $2)
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input toppings" type="checkbox" name="toppings3" value="mushrooms"
+              <input class="form-check-input toppings" type="checkbox" name="toppings2" value="Sausage" id="sausage">
+              <label class="form-check-label" for="defaultCheck1">
+                Sausage (add $2)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input toppings" type="checkbox" name="toppings3" value="Mushrooms"
                 id="mushrooms">
               <label class="form-check-label" for="defaultCheck1">
-                mushrooms
+                Mushrooms (add $ .75)
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input toppings" type="checkbox" name="toppings4" value="pineapple"
+              <input class="form-check-input toppings" type="checkbox" name="toppings4" value="Pineapple"
                 id="pineapple">
               <label class="form-check-label" for="defaultCheck1">
-                pineapple
+                Pineapple (add $ .75)
               </label>
             </div>
           </div>
