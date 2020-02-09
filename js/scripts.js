@@ -50,7 +50,7 @@ class Pizza {
 }
 // -------UI-------
 var order = new Order();
-var toppings = []; 
+ 
 
 function displayPizzaToppings(toppings) {
   var toppingsList = "";
@@ -72,7 +72,7 @@ function displayOrderDetails(OrderToDisplay) {
 
 
 
-function attachContactListeners() {
+function attachContactListeners(toppings) {
   $("input.toppings").on("change", function(){
     var topping = $(this);
     if (topping.is(":checked")) {
@@ -113,7 +113,8 @@ function checkSize(){
 }
 
 $(document).ready(function(){
-  attachContactListeners();
+  var toppings = [];
+  attachContactListeners(toppings);
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
     if (checkSize() === false){return false};
