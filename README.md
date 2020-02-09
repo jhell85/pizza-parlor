@@ -42,8 +42,10 @@ git clone https://github.com/jhell85/pizza-parlor.git
 
 Behavoir | Input | Output
 :---------:|:------:|:------:
-the program takes in a pizza order size from a radio button selector |  | 'click'
-The program takes in any words and console logs the output | 'learning to code' | 'learning to code'
+the program takes in a pizza order size from a radio button selector | 'small selected' | the program saves the size 
+The program lets you add toppings with checkboxes | 'cheese & pepperoni checked' ' | the program saves the toppings
+The program lets you add your pizza to an order once submitted and it displays your order | 'add pizza' | 'order is displayed on the page with size, toppings and price'
+the program lets you submit your total order and lets you know it's being processed | click 'submit order' | alerts user that the order has been submitted and resets page
 
 ## Support 
 
@@ -57,25 +59,7 @@ _The software is provided as is. It might work as expected - or not. Just don't 
 * [jQuery](https://jquery.com/) - Used to interact with the DOM
 * [Bootstrap 4.4](https://getbootstrap.com/) - Used for styling
 
-## Useful tools
 
-* [free icons @ icons8](https://icons8.com/)
-* [free  icons @ fontawesome](https://fontawesome.com/)
----
-* [Old School Gifs Search](https://gifcities.org/)
-* [free images @ unsplash](https://unsplash.com/)
-    * **_source.unsplash.com_ will return a random image at a desired size by simply calling the size after the url followed by a '?' and a keyword. Example below**
-
-    * _https://source.unsplash.com/400x400/?cat_
-    * http://unsplash.it/500/500 - This will just return a random image the size of 500x500
----
-* [Flex-box Cheat Sheet](http://yoksel.github.io/flex-cheatsheet/)
-* [CSS Grid Cheat Sheet](http://grid.malven.co/)
----
-* [CSS Gradient BG Generator](https://mycolor.space/gradient)
-* [CSS Basic Gradient Generator](https://cssgradient.io/)
----
-* [CSS Dropshadow Generator](https://cssgenerator.org/box-shadow-css-generator.html)
 
 ### License
 
