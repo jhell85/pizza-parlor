@@ -124,6 +124,5 @@ $(document).ready(function(){
     displayOrderDetails(order);
     clearInputs();
     toppings = [];
-    console.log(`Order: ${order} toppings: ${toppings}`);
   })
 });
