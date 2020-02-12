@@ -7,7 +7,7 @@ function Order() {
 }
 
 Order.prototype.addPizza = function(pizza) {
-  pizza.price = pizza.getPrice();
+  pizza.getPrice();
   pizza.id = this.assignId();
   this.pizzas.push(pizza);
   this.price += pizza.price;
@@ -23,10 +23,10 @@ Order.prototype.assignId = function () {
 }
 //------------Pizza Logic-----------------
 class Pizza {
-  constructor(pizzaSize,toppings,pizzaPrice) {
+  constructor(pizzaSize,toppings) {
   this.size = pizzaSize;
   this.toppings = toppings;
-  this.price = pizzaPrice;
+  this.getPrice();
   }
 
   getPrice(){
@@ -45,12 +45,10 @@ class Pizza {
         this.price += .75;
       }
     });
-    return this.price
   }
 }
 // -------UI-------
 var order = new Order();
- 
 
 function displayPizzaToppings(toppings) {
   var toppingsList = "";
@@ -70,27 +68,11 @@ function displayOrderDetails(OrderToDisplay) {
   PizzaList.html(htmlForPizzaDetails);
 }
 
-
-
-function attachContactListeners(toppings) {
-  $("input.toppings").on("change", function(){
-    var topping = $(this);
-    if (topping.is(":checked")) {
-      toppings.push(topping.val());
-      return toppings
-    }
-    else {
-      toppings = toppings.filter(i => i != topping.val());
-      return toppings
-    }
-  });
-
+function attachContactListeners() {
   $("#order").on("click", "#button-order", function(){
     alert("thanks for your order we will get that to you ASAP");
     location.reload(true);
   });
-
-  return toppings
 }
 
 function clearInputs(){
@@ -113,8 +95,21 @@ function checkSize(){
 }
 
 $(document).ready(function(){
-  var toppings = [];
-  attachContactListeners(toppings);
+  let toppings = [];
+  attachContactListeners();
+  
+  $("input.toppings").on("change", function(){
+    var topping = $(this);
+    if (topping.is(":checked")) {
+      toppings.push(topping.val());
+      return toppings
+    }
+    else {
+      toppings = toppings.filter(i => i != topping.val());
+      return toppings
+    }
+  });
+
   $("#form-pizza").submit(function(event) {
     event.preventDefault();
     if (checkSize() === false){return false};
