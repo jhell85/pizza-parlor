@@ -26,7 +26,6 @@ class Pizza {
   constructor(pizzaSize,toppings) {
   this.size = pizzaSize;
   this.toppings = toppings;
-  this.getPrice();
   }
 
   getPrice(){
